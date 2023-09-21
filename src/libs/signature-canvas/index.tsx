@@ -1,24 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useRef, useState } from 'react'
-import { StyleSheet, Text, View, Image, Button } from 'react-native'
+import { useRef } from 'react'
+import { StyleSheet, View, Button } from 'react-native'
 import SignatureScreen, { SignatureViewRef } from 'react-native-signature-canvas'
 
 
 export function SignCanvas() {
-  const [signature, setSign] = useState(null)
   const ref = useRef<SignatureViewRef>(null)
-
-  const text = 'Descrição'
 
   const handleOK = (signature: string) => {
     console.log(signature)
   }
   const handleClear = () => {
-    console.log('clear success!')
     ref.current?.clearSignature()
   }
   const handleConfirm = () => {
-    console.log('end')
     ref.current?.readSignature()
   }
   const handleUndo = () => {
