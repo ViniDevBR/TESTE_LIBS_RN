@@ -1,5 +1,7 @@
+import { MainScreen } from '@/screen'
+import { SafeArea } from '@/components/SafeArea'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+
 
 //https://unpkg.com/browse/react-native-signature-canvas@4.6.1/index.d.ts
 //https://www.npmjs.com/package/react-native-signature-canvas
@@ -8,18 +10,9 @@ import { StyleSheet, Text, View } from 'react-native'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <SafeArea>
+      <MainScreen />
       <StatusBar style="auto" />
-    </View>
+    </SafeArea>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
